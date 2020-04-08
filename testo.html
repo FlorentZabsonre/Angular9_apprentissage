@@ -1,0 +1,29 @@
+<!doctype html> 
+<html lang="fr"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>Test</title> 
+ </head> 
+ <body> 
+
+    <!--Un simple paragraphe -->
+<p id="paragraphe-shadow"><p>
+    <script>
+    // On crée un nouveau Shadow DOM sur un élément de notre page, 
+    // qui possède l'indentifiant 'paragraphe-shadow' :
+    var shadow = document.querySelector('#paragraphe-shadow').attachShadow({mode: 'open'}); 
+     
+    // Pour l'instant notre Shadow DOM est vide, mais nous pouvons lui ajouter du contenu. 
+    shadow.innerHTML = "<p id='shadow'>Salut, Shadow DOM !</p>";
+     
+    // Si on recherche notre contenu caché depuis la console du navigateur,
+    // alors la commande suivante ne retourne rien, car le DOM n'a pas accès au Shadow DOM ! 
+    document.querySelectorAll('#paragraphe-shadow');
+
+   // On ajoute un peu de style à notre Shadow DOM 
+shadow.innerHTML += '<style>p {color: red;}</style>';
+
+</script>
+
+</body> 
+</html>
