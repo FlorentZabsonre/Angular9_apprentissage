@@ -26,3 +26,4 @@ function createHeros(lifePoint: number, name: string, planet?: string): Heros
     if(planet) heros.planet = planet;
     return heros;
 }
+

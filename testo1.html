@@ -5,14 +5,33 @@
   <title>Test</title> 
  </head> 
  <body> 
-
+    <super-hero></super-hero>
     <template id="super-heros"> 
         <style> 
         h1 { color: green; }; 
        </style> 
         <h1>Green Lantern</h1> 
-       </template>
+    </template>
+    
+<script>
+customElements.define('super-hero',
+ class extends HTMLElement {
+  constructor() {
+   super();
+   this.innerHTML = '<h1>Supermian</h1>';
+   let template = document.getElementById('super-hero');
+   // On récupère le contenu de notre template :
+   let templateContent = template.content;
+   // On ajoute le contenu de notre template au DOM de l'ombre
+   const shadowRoot = this.attachShadow({mode:'open'})
+    .appendChild(templateContent.cloneNode(true));
+  }
+})
+
+</script>
 
 
+
+       
 </body> 
 </html>
