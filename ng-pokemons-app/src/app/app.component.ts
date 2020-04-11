@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
  template: `<h1>Hello, Angular 2 !</h1>`, 
 })
 export class AppComponent implements OnInit{ 
- private pokemons : Pokemon[];
+ private pokemons: Pokemon[];
  
  ngOnInit()
  {
