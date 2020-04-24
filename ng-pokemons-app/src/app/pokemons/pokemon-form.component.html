@@ -12,7 +12,12 @@
         [(ngModel)]="pokemon.name" name="name"
         #name="ngModel"> 
       </div> 
-      
+            <!-- error -->
+      <div [hidden]="name.valid || name.pristine" 
+        class="card-panel red accent-1"> 
+        Le nom du pokémon est requis (1-25). 
+      </div> 
+      </div>
       <!-- Pokemon hp -->
       <div class="form-group"> 
        <label for="hp">Point de vie</label> 
@@ -39,6 +44,7 @@
           id="{{ type }}"
           [value]="type" 
           [checked]="hasType(type)" 
+          [disabled]="!isTypesValid(type)"
           (change)="selectType($event, type)">
           
          <span [attr.for]="type"> 
